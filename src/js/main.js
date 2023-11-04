@@ -1,9 +1,12 @@
 import $ from './lib/lib';
 
 // $('button').on('click', function() {
-//     $(this).toggleClass('active');
+//     $('div').eq(0).toggleClass('active');
 // });
 
-// $('div').addAttribute('data-go', '1').removeAttribute('data-go');
+// $('div').click(function() {
+//     console.log($(this).index());
+// });
 
-$('div').addClass('show', 'go');
+// console.log($('.more').closest('.find__me'));
+// console.log($('.find__me').siblings());
