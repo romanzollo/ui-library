@@ -7,6 +7,7 @@ import './modules/classes';
 import './modules/attributes';
 import './modules/actions';
 import './modules/handlers';
+import './modules/effects';
 
 // экспортируем $ уже насыщенную методами и функционалом из modules
 export default $;

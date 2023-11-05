@@ -10,3 +10,6 @@ import $ from './lib/lib';
 
 // console.log($('.more').closest('.find__me'));
 // console.log($('.find__me').siblings());
+
+// $('button').fadeOut(1800);
+$('button').fadeIn(1800);
