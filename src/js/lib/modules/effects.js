@@ -3,7 +3,7 @@ import $ from '../core';
 $.prototype.animateOverTime = function(duration, callbackFn, finalFn) {
     let timeStart;
 
-    // техническая функция которая запускается через определенный интервал времени
+    // техническая (внутренняя) функция которая запускается через определенный интервал времени
     function _animateOverTime(time) {
         // сработает только при первом запуске
         if (!timeStart) {
@@ -59,13 +59,44 @@ $.prototype.fadeOut = function(duration, final) {
             // прозрачность достигла максимального значения
             if (complection === 1) {
                 this[i].style.display = 'none';
-            }
-
-            
+            }       
         };
 
         const animate = this.animateOverTime(duration, _fadeOut, final); // duration единственный обязательный алгоритм
         requestAnimationFrame(animate);
+    }
+
+    return this;
+};
+
+$.prototype.fadeToggle = function(duration, display = 'block', final) {
+    for (let i = 0; i < this.length; i++) {
+        if (window.getComputedStyle(this[i]).display === 'none') {
+            this[i].style.display = display;
+
+            // техническая (внутренняя) функция, обязательно должна быть стрелочная чтобы контекст был на том объекте с которым мы работаем
+            // complection перейдет  из _animateOverTime
+            const _fadeIn = (complection) => {
+                this[i].style.opacity = complection;
+            };
+
+            const animate = this.animateOverTime(duration, _fadeIn, final); // duration единственный обязательный алгоритм
+            requestAnimationFrame(animate);
+        } else {
+            // техническая функция, обязательно должна быть стрелочная чтобы контекст был на том объекте с которым мы работаем
+            // complection перейдет  из _animateOverTime
+            const _fadeOut = (complection) => {
+                // задаем уровень прозрачности (opacity)
+                this[i].style.opacity = 1 - complection;
+                // прозрачность достигла максимального значения
+                if (complection === 1) {
+                    this[i].style.display = 'none';
+                }       
+            };
+
+            const animate = this.animateOverTime(duration, _fadeOut, final); // duration единственный обязательный алгоритм
+            requestAnimationFrame(animate);
+        }
     }
 
     return this;

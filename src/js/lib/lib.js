@@ -8,6 +8,7 @@ import './modules/attributes';
 import './modules/actions';
 import './modules/handlers';
 import './modules/effects';
+import './components/dropdown';
 
 // экспортируем $ уже насыщенную методами и функционалом из modules
 export default $;
