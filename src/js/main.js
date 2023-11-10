@@ -26,4 +26,17 @@ import $ from './lib/lib';
 //     `
 // );
 
+// // чтобы метод заработал после формирования html
 // $('.dropdown-toggle').dropdown();
+
+// function getScroll(){
+//         setInterval(function(){
+//                 let eh = $('html')[0].scrollHeight;
+//                 let wh = $(window).height();
+//                 if (eh>wh) {
+//                         $('body').addClass('scroll')
+//                 } else {
+//                         $('body').removeClass('scroll')
+//                 }
+//         },10);
+// };

@@ -9,6 +9,7 @@ import './modules/actions';
 import './modules/handlers';
 import './modules/effects';
 import './components/dropdown';
+import './components/modal';
 
 // экспортируем $ уже насыщенную методами и функционалом из modules
 export default $;
