@@ -40,3 +40,37 @@ import $ from './lib/lib';
 //                 }
 //         },10);
 // };
+
+
+$('#trigger').click(() => $('#trigger').createModal({
+    text: {
+        title: 'Modal title',
+        body: 'Modal body, lorem ipsum dolor sit amet consectetur adipisicing elit. Officia itaque placeat qui suscipit!'
+    },
+    btns: {
+        count: 3, // колличество кнопок
+        settings: [
+            [
+                'Close',
+                ['btn-danger', 'mr-10'],
+                true
+            ],
+            [
+                'Save changes',
+                ['btn-success'],
+                false,
+                () => {
+                    alert('Данные сохранены');
+                }
+            ],
+            [
+                'Another button',
+                ['btn-warning', 'ml-10'],
+                false,
+                () => {
+                    alert('Hi everyone');
+                }
+            ]
+        ]
+    }
+}));
