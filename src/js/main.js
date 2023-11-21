@@ -77,6 +77,8 @@ $('#trigger').click(() => $('#trigger').createModal({
 
 $('.carousel-test').createCarousel({
     id: 'carousel-test',
+    autoplay: true,
+    autoplaySpeed: 2000,
     slides: [
         'https://ipiccy.com/res/template/img/hp_v2/pics/ba-01s3.jpg',
         'https://images4.fanpop.com/image/photos/18200000/Lovely-nature-god-the-creator-18227423-600-400.jpg',
@@ -86,7 +88,7 @@ $('.carousel-test').createCarousel({
 });
 
 $('.carousel-test2').createCarousel({
-    id: 'carousel-test2',
+    id: 'carousel-test2', 
     slides: [
         'https://wallpapers.com/images/high/bridge-at-night-picture-8blc5g4nsuqr96u2.webp',
         'https://wallpapers.com/images/high/snowy-road-picture-3wlwtu7z46vbv7k2.webp',

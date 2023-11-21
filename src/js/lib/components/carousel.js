@@ -89,11 +89,15 @@ $.prototype.carousel = function() {
 $('.carousel').carousel();
 
 // метод для динамического формирования слайдера-карусели с помощью JS
-$.prototype.createCarousel = function({id, slides} = {}) {
+$.prototype.createCarousel = function({id, slides, autoplay = false, autoplaySpeed = 2000} = {}) {
     for (let i = 0; i < this.length; i++) {
         const carousel = document.createElement('div');
         carousel.classList.add('carousel');
         carousel.setAttribute('id', id);
+
+        if (autoplay) {
+            carousel.setAttribute('data-autoplay', 'true');
+        }
 
         const indicators = [];
         const slideItems = [];
@@ -146,6 +150,8 @@ $.prototype.createCarousel = function({id, slides} = {}) {
         const slidesField = document.querySelector(`#${id} .carousel-slides`);
         // dots
         const dots = document.querySelectorAll(`#${id} .carousel-indicators li`);
+        const prev = $(document.querySelector(`#${id} [data-slide="prev"]`));
+        const next = $(document.querySelector(`#${id} [data-slide="next"]`));
     
         slidesField.style.width = 100 * slidesItems.length + '%';
         // устанавливаем ширину для каждого слайда
@@ -156,11 +162,8 @@ $.prototype.createCarousel = function({id, slides} = {}) {
         let offset = 0;
         // для отслеживания индекса слайда который мы видим
         let slideIndex = 0;
-        
-        $(document.querySelector(`#${id} [data-slide="next"]`)).click((e) => {
-            e.preventDefault();
-            e.stopPropagation();
-    
+
+        function slideToNext() {
             // replace(/\D/g, '') - убираем 'px', '%' и т.д. оставляем только числа
             if (offset == (+width.replace(/\D/g, '') * (slidesItems.length - 1))) {
                 offset = 0;
@@ -180,12 +183,9 @@ $.prototype.createCarousel = function({id, slides} = {}) {
             // устанавливаем класс active dots`ам в соответствии с индексом(slideIndex) показываемого слайда
             dots.forEach((dot) => dot.classList.remove('active'));
             dots[slideIndex].classList.add('active');
-        });
-    
-        $(document.querySelector(`#${id} [data-slide="prev"]`)).click((e) => {
-            e.preventDefault();
-            e.stopPropagation();
-    
+        }
+
+        function slideToPrev() {
             // replace(/\D/g, '') - убираем 'px', '%' и т.д. оставляем только числа
             if (offset == 0) {
                 offset = +width.replace(/\D/g, '') * (slidesItems.length - 1);
@@ -204,8 +204,44 @@ $.prototype.createCarousel = function({id, slides} = {}) {
     
             // устанавливаем класс active dots`ам в соответствии с индексом(slideIndex) показываемого слайда
             dots.forEach((dot) => dot.classList.remove('active'));
-            dots[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active'); 
+        }
+
+        // функция для установки интервала переключения слайдера 
+        function autoplaySlides() {
+            let timer = setInterval(() => {
+        	    slideToNext();
+    	    }, autoplaySpeed);
+            return timer;
+        }
+
+        prev.click((e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            slideToPrev();
         });
+    
+
+        next.click((e) => {
+            e.preventDefault();
+            e.stopPropagation();
+    
+            slideToNext();
+        }); 
+
+        // автоматическое переключение слайдов
+        if (autoplay) {
+            let timer = autoplaySlides();
+
+            if (document.querySelector(`#${id}`).addEventListener('mouseenter', () => {
+                clearInterval(timer);
+            }));
+
+            if (document.querySelector(`#${id}`).addEventListener('mouseleave', () => {
+                timer = autoplaySlides();
+            }));
+        }
     
         // вешаем обработчик событий на dots для переключения слайдов
         // находим нужный слайдер по id
@@ -224,7 +260,6 @@ $.prototype.createCarousel = function({id, slides} = {}) {
             dots.forEach((dot) => dot.classList.remove('active'));
             dots[slideIndex].classList.add('active');
         });
-    }
-    
+    } 
 
 };
