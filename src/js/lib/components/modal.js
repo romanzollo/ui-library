@@ -16,6 +16,8 @@ $.prototype.calcScroll = function() {
     return scrollWidth;
 };
 
+// передаем аргумент created чтобы удалять МО если оно было созданно динамически через метод createModal
+// чтобы избежать создание на странице множества одинаковых МО
 $.prototype.modal = function(created) {
     let scroll = this.calcScroll();
     

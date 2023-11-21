@@ -12,6 +12,7 @@ import './components/dropdown';
 import './components/modal';
 import './components/tabs';
 import './components/accordion';
+import './components/carousel';
 
 // экспортируем $ уже насыщенную методами и функционалом из modules
 export default $;
