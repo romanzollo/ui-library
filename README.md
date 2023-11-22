@@ -79,10 +79,28 @@ $('button').on('click', function() {
 
 console.log($('.item').index());
 
-$('div').eq(2).find('.someclass');
-$('.someclass').closest('.findme');
+$('div').eq(2).find('.someClass');
+$('.someClass').closest('.findMe');
 $('button').html('Hello');
 ```
 
 #### Создание анимаций
+``.fadeIn(duration, display = 'block', final)``
+показ элементов через анимацию на странице, где 'duration' - продолжительность анимации (единственный обязательный аргумент), display - инлайн стиль и final - колбэк-функция
 
+``.fadeOut(duration, final)``
+скрытие элементов через анимацию на странице, где 'duration' - продолжительность анимации (единственный обязательный аргумент), final - колбэк-функция
+
+``.fadeToggle(duration, display = 'block', final)``
+скрытие и показ элементов через анимацию на странице, где 'duration' - продолжительность анимации (единственный обязательный аргумент), display - инлайн стиль и final - колбэк-функция
+
+*Пример кода:*
+```javascript
+$('button').on('click', function() {
+    $(this).hide().show().toggleClass('active');
+});
+
+$('[data-count="second"]').on('click', () => {
+    $('div').eq(2).fadeToggle(800);
+});
+```
