@@ -16,8 +16,10 @@
 
 
 #### Работа с CSS классами
-``addClass(class, class, ...)`` 
+``.addClass(class, class, ...)`` 
 добавление одного или нескольких классов элементу
 
-``removeClass(class, class, ...)`` 
+``.removeClass(class, class, ...)`` 
 удаление классов
+
+```.toggleClass(class, class, ...)``` тоглим класс
