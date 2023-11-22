@@ -24,7 +24,7 @@
 
 ``.toggleClass(class, class, ...)`` тоглим класс
 
-**Пример кода:**
+*Пример кода:*
 ```javascript
 $('.active').addClass('show').removeClass('active);
 ```
