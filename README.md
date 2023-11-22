@@ -17,7 +17,7 @@
 
 
 
-#### Работа с CSS классами
+#### Работа с CSS классами, стилями и обработчиками событий
 ``.addClass(class, class, ...)``
 добавление одного или нескольких классов элементу
 
@@ -26,9 +26,28 @@
 
 ``.toggleClass(class, class, ...)`` тоглим класс
 
+``.on(eventName, callback)``
+назначение обработчика события, где `eventName` - само событие а `callback` - колбэк-функция при вызове этого события
+
+``.off(eventName, callback)``
+удаление обработчика события, где `eventName` - само событие а `callback` - колбэк-функция при вызове этого события
+
+``.click(handler)``
+вызов обработчика события 'click' на элементе, где 'handler' - колбэк-функция обработчика
+
 *Пример кода:*
 ```javascript
-$('.active').addClass('show').removeClass('active);
+$('button').on('click', function() {
+    $('.active').addClass('show').removeClass('active);
+});
+
+$('.active').on('click', sayHello);
+$('.active').off('click', sayHello);
+$('.active').click(sayHello);
+
+function sayHello() {
+    console.log('Hello');
+}
 ```
 
 
@@ -64,3 +83,6 @@ $('div').eq(2).find('.someclass');
 $('.someclass').closest('.findme');
 $('button').html('Hello');
 ```
+
+#### Создание анимаций
+
