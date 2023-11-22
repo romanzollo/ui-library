@@ -16,6 +16,7 @@
 
 
 #### Работа с CSS классами
-``addClass(class, class, ...)`` -
+``addClass(class, class, ...)`` 
 добавление одного или нескольких классов элементу
-``removeClass(class, class, ...)`` - удаление классов
+``removeClass(class, class, ...)`` 
+удаление классов
