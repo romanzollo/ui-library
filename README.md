@@ -23,3 +23,8 @@
 удаление классов
 
 ```.toggleClass(class, class, ...)``` тоглим класс
+
+**Пример кода:**
+```javascript
+$('.active').addClass('active');
+```
