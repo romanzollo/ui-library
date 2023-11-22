@@ -16,7 +16,6 @@
 - Работа с сервером;
 
 
-<<<<<<< HEAD
 #### Работа с CSS классами
 ``addClass(class, class, ...)`` 
 добавление одного или нескольких классов элементу
@@ -134,4 +133,4 @@ $('[data-count="second"]').on('click', () => {
     $('button').addAttribute('data-go', '1');
     $('button').removeAttribute('id');
 ```
->>>>>>> ce9a81c942e71d514a9b5d62f0af6e5dbd3cc66c
+
