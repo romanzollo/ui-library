@@ -16,17 +16,15 @@
 
 
 #### Работа с CSS классами
-```javascript
-.addClass(class, class, ...)```
+``.addClass(class, class, ...)``
 добавление одного или нескольких классов элементу
 
-```javascript
-.removeClass(class, class, ...)```
+``.removeClass(class, class, ...)``
 удаление классов
 
-```.toggleClass(class, class, ...)``` тоглим класс
+``.toggleClass(class, class, ...)`` тоглим класс
 
 **Пример кода:**
 ```javascript
-$('.active').addClass('active');
+$('.active').addClass('show').removeClass('active);
 ```
