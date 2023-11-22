@@ -97,7 +97,7 @@ $.prototype.closest = function(selector) {
     return this;
 };
 
-// получаем все соседние элементы за не включая сам элемент
+// получаем все соседние элементы не включая сам элемент
 // можно в дальнейшем использовать для табов
 $.prototype.siblings = function() {
     let numberOfItems = 0;
