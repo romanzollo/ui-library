@@ -53,7 +53,7 @@ $('#trigger').click(() => $('#trigger').createModal({
             [
                 'Close',
                 ['btn-danger', 'mr-10'],
-                true
+                true // 
             ],
             [
                 'Save changes',

@@ -169,3 +169,118 @@ JavaScript
 $('.dropdown-toggle').dropdown();
 ```
 
+<hr>
+
+### Динамическое создание модальных окон и их компонентов
+*Пример кода:* <br> HTML-разметка
+```html
+    <!-- Card -->
+        <div class="goods d-flex f-space-around">
+            <div class="card">
+                <img class="card-img" src="https://www.apple.com/newsroom/images/product/iphone/lifestyle/Apple_Shot-on-iPhone-Challenge-2020_Austin-Mann_01072020_big.jpg.large.jpg" alt="photo">
+                <div class="card-body">
+                    <div class="card-title">Card title</div>
+                    <p class="card-text">Text...</p>
+                    <a href="#" id="trigger" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Link to</a>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img" src="https://www.apple.com/newsroom/images/product/iphone/lifestyle/Apple_Shot-on-iPhone-Challenge-2020_Austin-Mann_01072020_big.jpg.large.jpg" alt="photo">
+                <div class="card-body">
+                    <div class="card-title">Card title #2</div>
+                    <p class="card-text">Text #2...</p>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Link to</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" id="exampleModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button class="close" data-close>
+                        <span>&times;</span>
+                    </button>
+                    <div class="modal-header">
+                        <div class="modal-title">
+                            Modal title
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        Modal text...
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-close>Close</button>
+                        <button class="btn btn-success">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="exampleModal2">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button class="close" data-close>
+                        <span>&times;</span>
+                    </button>
+                    <div class="modal-header">
+                        <div class="modal-title">
+                            Modal title #2
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        Modal text #2...
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-close>Close</button>
+                        <button class="btn btn-success">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+```
+
+JavaScript
+```javascript
+    $('[data-toggle="modal"]').modal();
+```
+
+*Пример динамического формирования модального окна с помощью встроенных в UI-Library методов*
+```javascript
+    // в метод createModal передаем обьект с настройками
+    $('#trigger').click(() => $('#trigger').createModal({
+        text: {
+            title: 'Modal title',
+            body: 'Modal text...'
+        },
+        btns: {
+            count: 3, // колличество кнопок
+            settings: [
+                [
+                    'Close',
+                    ['btn-danger', 'mr-10'], // добавляем классы стилей
+                    true // добавляем data-close для возможности дальнейшего закрытия модального окна
+                ],
+                [
+                    'Save changes',
+                    ['btn-success'], // добавляем классы стилей
+                    false,
+                    // колбэк-функция для дальнейших действий
+                    () => {
+                        alert('Данные сохранены');
+                    }
+                ],
+                [
+                    'Another button',
+                    ['btn-warning', 'ml-10'], // добавляем классы стилей
+                    false,
+                    // колбэк-функция для дальнейших действий
+                    () => { 
+                        alert('Hi everyone');
+                    }
+                ]
+            ]
+        }
+    }));
+```
