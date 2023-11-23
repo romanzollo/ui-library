@@ -133,14 +133,13 @@ $('[data-count="second"]').on('click', () => {
 ```
 <hr>
 
-<<<<<<< HEAD
+
 #### Создание Dropdown-Menu
 *Пример кода:*
 <br>HTML-разметка
-=======
+
 #### Создание Dropdown Menu
 *Пример кода:* <br> HTML-разметка
->>>>>>> b40c368e04edc8313cd0b77bf3c9bfb136953340
 ```html
     <!-- Dropdown menu -->
         <div class="dropdown">
