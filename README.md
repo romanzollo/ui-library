@@ -131,8 +131,7 @@ $('[data-count="second"]').on('click', () => {
 ```
 
 #### Создание Dropdown Menu
-*Пример кода:*
-        HTML-разметка
+*Пример кода:*   HTML-разметка
 ```html
     <!-- Dropdown menu -->
         <div class="dropdown">
