@@ -441,3 +441,25 @@ JavaScript
         ]
     });
 ```
+
+<hr>
+
+### Работа с сервером
+<br>
+
+``.get(url, dataTypeAnswer = 'json')``
+выполнение get-запроса на сервер, где *url* - url адрес и *dataTypeAnswer* - в какой тип данных преобразовывать ответ с сервера
+
+``.post(url, data, dataTypeAnswer = 'text')``
+выполнение get-запроса на сервер, где *url* - url адрес, *data* - отправляемые данные и *dataTypeAnswer* - в какой тип данных преобразовывать ответ с сервера
+
+*Пример кода:* <br>
+```javascript
+    $().get('https://jsonplaceholder.typicode.com/todos/1')
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+```
