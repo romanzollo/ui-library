@@ -7,7 +7,7 @@
 - Работа с элементами DOM;
 - Создание анимаций (fadeIn, fadeOut и т.д);
 - Работа с атрибутами елемента;
-- Создание готовых компонентов на странице (кнопок);
+- Создание готовых компонентов на странице (кнопок) с использованием стилей;
 - Создание Dropdown Menu;
 - Динамическое создание модальных окон и их компонентов;
 - Создание табов (вкладок);
@@ -109,7 +109,7 @@ $('button').html('Hello');
 *Пример кода:*
 ```javascript
 $('button').on('click', function() {
-    $(this).hide().show().toggleClass('active');
+    $('.modal').fadeIn(500);
 });
 
 $('[data-count="second"]').on('click', () => {
@@ -130,3 +130,21 @@ $('[data-count="second"]').on('click', () => {
     $('button').removeAttribute('id');
 ```
 
+#### Создание Dropdown Menu
+*Пример кода:*
+HTML-разметка
+```html
+    <!-- Dropdown menu -->
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown button</button>
+            <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
+                <a href="#" class="dropdown-item">Action</a>
+                <a href="#" class="dropdown-item">Action #2</a>
+                <a href="#" class="dropdown-item">Action #3</a>
+            </div>
+        </div>
+```
+JavaScript
+```javascript
+    $('.dropdown-toggle').dropdown();
+```
