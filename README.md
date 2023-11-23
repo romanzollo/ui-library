@@ -134,7 +134,8 @@ $('[data-count="second"]').on('click', () => {
 <hr>
 
 ### Создание Dropdown Menu
-*Пример кода:* <br> HTML-разметка
+*Пример кода:* <br> <br>
+HTML-разметка
 ```html
     <!-- Dropdown menu -->
         <div class="dropdown">
@@ -172,7 +173,8 @@ $('.dropdown-toggle').dropdown();
 <hr>
 
 ### Динамическое создание модальных окон и их компонентов
-*Пример кода:* <br> HTML-разметка
+*Пример кода:* <br> <br>
+HTML-разметка
 ```html
     <!-- Card -->
         <div class="goods d-flex f-space-around">
@@ -288,7 +290,8 @@ JavaScript
 <hr>
 
 ### Создание табов (вкладок)
-*Пример кода:* <br> HTML-разметка
+*Пример кода:* <br> <br>
+HTML-разметка
 ```html
     <!-- Tabs -->
     <div class="tab mt-20 block-center">
@@ -324,7 +327,8 @@ JavaScript
 <hr>
 
 ### Создание аккордеона
-*Пример кода:* <br> HTML-разметка
+*Пример кода:* <br><br>
+HTML-разметка
 ```html
     <!-- Accordion -->
     <div class="accordion mt-20 block-center">
