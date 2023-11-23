@@ -430,7 +430,7 @@ HTML-разметка
         ]
     });
 
-$('.carousel-test2').createCarousel({
+    $('.carousel-test2').createCarousel({
         id: 'carousel-test2', // имя id-атрибута который будет добавлен слайдеру
         slides: [
             'https://wallpapers.com/images/high/bridge-at-night-picture-8blc5g4nsuqr96u2.webp',
