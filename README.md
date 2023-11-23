@@ -416,7 +416,6 @@ HTML-разметка
     <div class="carousel-test"></div>
     <div class="carousel-test2"></div>
 ```
-<br>
 JavaScript
 
 ```javascript
