@@ -13,6 +13,7 @@ import './components/modal';
 import './components/tabs';
 import './components/accordion';
 import './components/carousel';
+import './services/requests';
 
 // экспортируем $ уже насыщенную методами и функционалом из modules
 export default $;
