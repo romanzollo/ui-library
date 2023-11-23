@@ -16,7 +16,7 @@
 - Работа с сервером;
 
 
-
+<hr>
 
 #### Работа с CSS классами, стилями и обработчиками событий
 ``.addClass(class, class, ...)``
@@ -51,7 +51,7 @@ function sayHello() {
 }
 ```
 
-
+<hr>
 
 #### Работа с элементами DOM
 ``.show()``
@@ -95,6 +95,7 @@ $('div').eq(2).find('.someClass');
 $('.someClass').closest('.findMe');
 $('button').html('Hello');
 ```
+<hr>
 
 #### Создание анимаций
 ``.fadeIn(duration, display = 'block', final)``
@@ -116,6 +117,7 @@ $('[data-count="second"]').on('click', () => {
     $('div').eq(2).fadeToggle(800);
 });
 ```
+<hr>
 
 #### Работа с атрибутами елемента
 ``.addAttribute(attributeName, attributeValue)``
@@ -129,10 +131,11 @@ $('[data-count="second"]').on('click', () => {
     $('button').addAttribute('data-go', '1');
     $('button').removeAttribute('id');
 ```
+<hr>
 
-#### Создание Dropdown Menu
+#### Создание Dropdown-Menu
 *Пример кода:*
-HTML-разметка
+<br>HTML-разметка
 ```html
     <!-- Dropdown menu -->
         <div class="dropdown">
@@ -147,4 +150,22 @@ HTML-разметка
 JavaScript
 ```javascript
     $('.dropdown-toggle').dropdown();
+```
+
+*Пример динамического формирования Dropdown-Menu с помощью встроенных в UI-Library методов*
+```javascript
+    $('.wrap').html(
+    `
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown button</button>
+            <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
+                <a href="#" class="dropdown-item">Action</a>
+                <a href="#" class="dropdown-item">Action #2</a>
+                <a href="#" class="dropdown-item">Action #3</a>
+            </div>
+        </div> 
+    `
+);
+
+$('.dropdown-toggle').dropdown();
 ```
