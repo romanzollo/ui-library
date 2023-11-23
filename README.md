@@ -177,7 +177,7 @@ $('.dropdown-toggle').dropdown();
     <!-- Card -->
         <div class="goods d-flex f-space-around">
             <div class="card">
-                <img class="card-img" src="https://www.apple.com/newsroom/images/product/iphone/lifestyle/Apple_Shot-on-iPhone-Challenge-2020_Austin-Mann_01072020_big.jpg.large.jpg" alt="photo">
+                <img class="card-img" src="https://someUrl.jpg" alt="photo">
                 <div class="card-body">
                     <div class="card-title">Card title</div>
                     <p class="card-text">Text...</p>
@@ -185,7 +185,7 @@ $('.dropdown-toggle').dropdown();
                 </div>
             </div>
             <div class="card">
-                <img class="card-img" src="https://www.apple.com/newsroom/images/product/iphone/lifestyle/Apple_Shot-on-iPhone-Challenge-2020_Austin-Mann_01072020_big.jpg.large.jpg" alt="photo">
+                <img class="card-img" src="https://someUrl.jpg" alt="photo">
                 <div class="card-body">
                     <div class="card-title">Card title #2</div>
                     <p class="card-text">Text #2...</p>
@@ -283,4 +283,70 @@ JavaScript
             ]
         }
     }));
+```
+
+<hr>
+
+### Создание табов (вкладок)
+*Пример кода:* <br> HTML-разметка
+```html
+    <!-- Tabs -->
+    <div class="tab mt-20 block-center">
+        <div class="tab-panel" data-tabpanel>
+            <div class="tab-item tab-item--active">Content 1</div>
+            <div class="tab-item">Content 2</div>
+            <div class="tab-item">Content 3</div>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton2">Dropdown button</button>
+                <div class="dropdown-menu" data-toggle-id="dropdownMenuButton2">
+                    <a href="#" class="dropdown-item">Action</a>
+                    <a href="#" class="dropdown-item">Action #2</a>
+                    <a href="#" class="dropdown-item">Action #3</a>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content tab-content--active">
+            Content 1
+        </div>
+        <div class="tab-content">
+            Content 2
+        </div>
+        <div class="tab-content">
+            Content 3
+        </div>
+    </div>
+```
+JavaScript
+```javascript
+    $('[data-tabpanel] .tab-item').tab();
+```
+
+<hr>
+
+### Создание аккордеона
+*Пример кода:* <br> HTML-разметка
+```html
+    <!-- Accordion -->
+    <div class="accordion mt-20 block-center">
+            <div class="accordion-head">
+                <span>First element</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    First content
+                </div>
+            </div>
+            <div class="accordion-head">
+                <span>Second element</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    Second content
+                </div>
+            </div>
+        </div>
+```
+JavaScript
+```javascript
+    $('.accordion-head').accordion();
 ```
