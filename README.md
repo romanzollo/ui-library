@@ -366,3 +366,76 @@ JavaScript
 ```javascript
     $('.accordion-head').accordion();
 ```
+
+<hr>
+
+### Создание слайдера
+<br>
+
+*Пример кода:* <br><br>
+HTML-разметка
+```html
+    <!-- Slider -->
+    <div class="carousel" id="carousel-example">
+            <ol class="carousel-indicators">
+                <li class="active"  data-slide-to="0"></li>
+                <li data-slide-to="1"></li>
+                <li data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-slides">
+                    <div class="carousel-item">
+                        <img src="https://someUrl.jpg" alt="photo">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://someUrl.jpg" alt="photo">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://someUrl.jpg" alt="photo">
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="carousel-prev" data-slide="prev">
+                <span class="carousel-prev-icon">&lt;</span>
+            </a>
+            <a href="#" class="carousel-next" data-slide="next">
+                <span class="carousel-next-icon">&gt;</span>
+            </a>
+        </div>
+```
+JavaScript
+```javascript
+    $('.carousel').carousel();
+```
+
+*Пример динамического формирования слайдера-карусели с помощью встроенных в UI-Library методов*
+HTML-разметка
+```html
+    <!-- Slider -->
+    <div class="carousel-test"></div>
+    <div class="carousel-test2"></div>
+```
+
+```javascript
+    // в метод createCarousel передаем обьект с настройками
+    $('.carousel-test').createCarousel({
+        id: 'carousel-test', // имя id-атрибута который будет добавлен слайдеру
+        autoplay: true, // автопереключение слайдов
+        autoplaySpeed: 2000, // скорость переключения в м/сек
+        slides: [
+            'https://ipiccy.com/res/template/img/hp_v2/pics/ba-01s3.jpg',
+            'https://images4.fanpop.com/image/photos/18200000/Lovely-nature-god-the-creator-18227423-600-400.jpg',
+            'https://pixlr.com/images/best-photo-editor-cover.jpg',
+            'https://i.imgur.com/samhXoH.jpeg'
+        ]
+    });
+
+$('.carousel-test2').createCarousel({
+        id: 'carousel-test2', // имя id-атрибута который будет добавлен слайдеру
+        slides: [
+            'https://wallpapers.com/images/high/bridge-at-night-picture-8blc5g4nsuqr96u2.webp',
+            'https://wallpapers.com/images/high/snowy-road-picture-3wlwtu7z46vbv7k2.webp',
+            'https://wallpapers.com/images/high/overlooking-lake-picture-zbdd0pxnxdmrjw01.webp',
+        ]
+    });
+```
