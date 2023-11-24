@@ -376,7 +376,7 @@ JavaScript
 HTML-разметка
 ```html
     <!-- Slider -->
-    <div class="carousel" id="carousel-example">
+    <div class="carousel" id="carousel-example" data-autoplay="true">
             <ol class="carousel-indicators">
                 <li class="active"  data-slide-to="0"></li>
                 <li data-slide-to="1"></li>
@@ -403,6 +403,8 @@ HTML-разметка
             </a>
         </div>
 ```
+*Примечание*: для запуска автоматического переключения слайдов добавить в главный контейнер слайдера (carousel) дата-атрибут *data-autoplay="true"*
+
 JavaScript
 ```javascript
     $('.carousel').carousel();
