@@ -7,6 +7,8 @@ $.prototype.carousel = function() {
         const slidesField = this[i].querySelector('.carousel-slides');
         // dots
         const dots = this[i].querySelectorAll('.carousel-indicators li');
+        const prev = $(document.querySelector(`[data-slide="prev"]`));
+        const next = $(document.querySelector(`[data-slide="next"]`));
 
         slidesField.style.width = 100 * slides.length + '%';
         // устанавливаем ширину для каждого слайда
@@ -18,33 +20,29 @@ $.prototype.carousel = function() {
         // для отслеживания индекса слайда который мы видим
         let slideIndex = 0;
         
-        $(this[i].querySelector('[data-slide="next"]')).click((e) => {
-            e.preventDefault();
-
+        function slideToNext() {
             // replace(/\D/g, '') - убираем 'px', '%' и т.д. оставляем только числа
             if (offset == (+width.replace(/\D/g, '') * (slides.length - 1))) {
                 offset = 0;
             } else {
                 offset += +width.replace(/\D/g, '');
             }
-
+    
             slidesField.style.transform = `translateX(-${offset}px)`;
-
+    
             // отслеживаем индекс активного слайда
             if (slideIndex == slides.length - 1) {
                 slideIndex = 0;
             } else {
                 slideIndex++;
             }
-
+    
             // устанавливаем класс active dots`ам в соответствии с индексом(slideIndex) показываемого слайда
             dots.forEach((dot) => dot.classList.remove('active'));
             dots[slideIndex].classList.add('active');
-        });
+        }
 
-        $(this[i].querySelector('[data-slide="prev"]')).click((e) => {
-            e.preventDefault();
-
+        function slideToPrev() {
             // replace(/\D/g, '') - убираем 'px', '%' и т.д. оставляем только числа
             if (offset == 0) {
                 offset = +width.replace(/\D/g, '') * (slides.length - 1);
@@ -53,18 +51,54 @@ $.prototype.carousel = function() {
             }
             
             slidesField.style.transform = `translateX(-${offset}px)`;
-
+    
             // отслеживаем индекс активного слайда
             if (slideIndex == 0) {
                 slideIndex = slides.length - 1;
             } else {
                 slideIndex--;
             }
-
+    
             // устанавливаем класс active dots`ам в соответствии с индексом(slideIndex) показываемого слайда
             dots.forEach((dot) => dot.classList.remove('active'));
-            dots[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active'); 
+        }
+
+        // функция для установки интервала переключения слайдера 
+        function autoplaySlides() {
+            let timer = setInterval(() => {
+        	    slideToNext();
+    	    }, 2000);
+            return timer;
+        }
+
+        prev.click((e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            slideToPrev();
         });
+    
+
+        next.click((e) => {
+            e.preventDefault();
+            e.stopPropagation();
+    
+            slideToNext();
+        }); 
+
+        // автоматическое переключение слайдов
+        if (this[i].getAttribute('data-autoplay')) {
+            let timer = autoplaySlides();
+
+            if (this[i].addEventListener('mouseenter', () => {
+                clearInterval(timer);
+            }));
+
+            if (this[i].addEventListener('mouseleave', () => {
+                timer = autoplaySlides();
+            }));
+        }
 
         // вешаем обработчик событий на dots для переключения слайдов
         // находим нужный слайдер по id
@@ -140,7 +174,7 @@ $.prototype.createCarousel = function({id, slides, autoplay = false, autoplaySpe
         carousel.querySelector('.carousel-indicators').append(...indicators);
         carousel.querySelector('.carousel-slides').append(...slideItems);
 
-        document.body.append(carousel);    
+        this[i].append(carousel);  
 
 
 
