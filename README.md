@@ -18,18 +18,49 @@
 
 <hr>
 
-### Готовые классы
+### Встроенные css-классы
+*цвета*
 ```css
-    // colors
-    $primary: #024fff;
-    $success: #2a9924;
-    $danger: #ea2e41;
-    $warning: #ffc907;
-    $dark: #343a40;    
+    primary: #024fff;
+    success: #2a9924;
+    danger: #ea2e41;
+    warning: #ffc907;
+    dark: #343a40;    
 ```
+*размеры*
+```css
+    .w-100 {
+        width: 100%;
+    }
 
-``.addClass(class, class, ...)``
-добавление одного или нескольких классов элементу
+    .w-50 {
+        width: 50%;
+    }
+
+    .w-300 {
+        width: 300px;
+    }
+
+    .w-500 {
+        width: 500px;
+    }
+
+    .h-100 {
+        height: 100%;
+    }
+
+    .h-50 {
+        height: 50%;
+    }
+
+    .h-300 {
+        height: 300px;
+    }
+
+    .h-500 {
+        height: 500px;
+    }    
+```
 
 
 <hr>
