@@ -19,7 +19,7 @@
 <hr>
 
 ### Встроенные css-классы
-*цвета*
+*color*
 ```css
     primary: #024fff;
     success: #2a9924;
@@ -27,7 +27,7 @@
     warning: #ffc907;
     dark: #343a40;    
 ```
-*размеры*
+*width*
 ```css
     .w-100 {
         width: 100%;
@@ -62,6 +62,199 @@
     }    
 ```
 
+*paddign*
+```css
+    .p10 {
+        padding: 10px;
+    }
+
+    .p20 {
+        padding: 20px;
+    }
+
+    .pt-10 {
+        padding-top: 10px;
+    }
+
+    .pr-10 {
+        padding-right: 10px;
+    }
+
+    .pl-10 {
+        padding-left: 10px;
+    }
+
+    .pb-10 {
+        padding-bottom: 10px;
+    }
+
+    .pt-20 {
+        padding-top: 20px;
+    }
+
+    .pr-20 {
+        padding-right: 20px;
+    }
+
+    .pl-20 {
+        padding-left: 20px;
+    }
+
+    .pb-20 {
+        padding-bottom: 20px;
+    }   
+```
+
+*margin*
+```css
+   .m10 {
+        margin: 10px;
+    }
+
+    .m20 {
+        margin: 20px;
+    }
+
+    .mt-10 {
+        margin-top: 10px;
+    }
+
+    .mr-10 {
+        margin-right: 10px;
+    }
+
+    .ml-10 {
+        margin-left: 10px;
+    }
+
+    .mb-10 {
+        margin-bottom: 10px;
+    }
+
+    .mt-20 {
+        margin-top: 20px;
+    }
+
+    .mr-20 {
+        margin-right: 20px;
+    }
+
+    .ml-20 {
+        margin-left: 20px;
+    }
+
+    .mb-20 {
+        margin-bottom: 20px;
+    }   
+```
+
+*font*
+```css
+    .fz-16 {
+        font-size: 16px;
+    }
+
+    .fz-20 {
+        font-size: 20px;
+    }
+
+    .fz-24 {
+        font-size: 24px;
+    }
+
+    .regular {
+        font-weight: 400;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .thin {
+        font-weight: 300;
+    }
+
+    .italic {
+        font-style: italic;
+    }
+
+    .text-color-primary {
+        color: $primary;
+    }
+
+    .text-color-success {
+        color: $success;
+    }
+    .text-color-danger {
+        color: $danger;
+    }
+
+    .text-color-warning {
+        color: $warning;
+    }
+
+    .text-color-dark {
+        color: $dark;
+    } 
+```
+
+*display*
+```css
+    .hidden {
+        visibility: hidden;
+    }
+
+    .visible {
+        visibility: visible;
+    }
+
+    .d-none {
+        display: none;
+    }
+
+    .d-block {
+        display: block;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .f-centered {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .f-space-around {
+        justify-content: space-around;
+    }
+
+    .f-space-between {
+        justify-content: space-between;
+    }  
+```
+
+*align*
+```css
+    .text-center {
+        text-align: center;
+    }
+
+    .block-center {
+        margin: 0 auto;
+    }
+```
+
+*align*
+```css
+    .text-center {
+        text-align: center;
+    }
+
+    .block-center {
+        margin: 0 auto;
+    }
+```
 
 <hr>
 
